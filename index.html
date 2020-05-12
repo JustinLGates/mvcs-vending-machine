@@ -3,18 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
     <title>Vending Machine</title>
   </head>
   <body>
-    <button onclick="app.machineController.buyCandy('chips')">chips</button>
-    <button onclick="app.machineController.buyCandy('sandwitch')">
-      Sandwitch
-    </button>
-    <button onclick="app.machineController.buyCandy('candy')">candy</button>
-    <button onclick="app.machineController.buyCandy('soda')">soda</button>
-    <button onclick="app.machineController.buyCandy('cheese')">cheese</button>
-    <button onclick="app.machineController.buyCandy('nuts')">nuts</button>
+    <header class="container-fluid">
+      <div class="row">
+        <div class="col-12"><h1>Vending machine</h1></div>
+      </div>
+    </header>
+    <main class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div id="cash"></div>
+        </div>
+        <div class="col-12">
+          <button onclick="app.machineController.buyCandy('chips')">
+            chips
+          </button>
+          <button onclick="app.machineController.buyCandy('sandwitch')">
+            Sandwitch
+          </button>
+          <button onclick="app.machineController.buyCandy('candy')">
+            candy
+          </button>
+          <button onclick="app.machineController.buyCandy('soda')">soda</button>
+          <button onclick="app.machineController.buyCandy('cheese')">
+            cheese
+          </button>
+          <button onclick="app.machineController.buyCandy('nuts')">nuts</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div id="inventory"></div>
+        </div>
+      </div>
+    </main>
 
     <script type="module" src="/app/main.js"></script>
   </body>

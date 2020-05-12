@@ -1,6 +1,6 @@
 import Items from "../models/items.js";
-let cashAvalable = 10.0;
-
+import Customer from "../models/customer.js";
+let customer = new Customer();
 let items = new Items({
   chips: { price: 1.0, cost: 0.41, inv: 7 },
   soda: { price: 1.25, cost: 0.32, inv: 3 },
@@ -11,10 +11,14 @@ let items = new Items({
 });
 
 export default class MachineService {
-  constructButtons() {}
   buyCandy(name) {
-    items[name].inv -= 1;
-    console.log(`you bought ${name} there is ${items[name].inv}remaining `);
+    if (items[name].price < customer.cash) {
+      items[name].inv -= 1;
+      customer.cash -= items[name].price;
+    }
+  }
+  getCustomerCash() {
+    return customer.cash;
   }
   constructor() {}
 }
